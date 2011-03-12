@@ -1,41 +1,21 @@
 #!/usr/bin/env python
-# coding: cp1251
+# coding: utf-8
+import string
 
 def main(args):
-    ''' Задаем файлы для работы '''
+    ''' Р—Р°РґР°РµРј С„Р°Р№Р»С‹ РґР»СЏ СЂР°Р±РѕС‚С‹ '''
     textFile1 = "textFile1"
     textFile2 = "textFile2"
     outputFile = "outputFile"
 
-    ''' Считываем числа из файлов в списки '''
+    ''' РЎС‡РёС‚С‹РІР°РµРј С‡РёСЃР»Р° РёР· С„Р°Р№Р»РѕРІ РІ СЃРїРёСЃРєРё '''
     list1 = getListNumbers(textFile1)
     list2 = getListNumbers(textFile2)
 
-    ''' Создаем таблицу и пишем ее в файл '''
+    ''' РЎРѕР·РґР°РµРј С‚Р°Р±Р»РёС†Сѓ Рё РїРёС€РµРј РµРµ РІ С„Р°Р№Р» '''
     createTable(outputFile, list1, list2)
-    
-pass
 
-''' Возвращает список чисел из файла '''
-def getListNumbers(nameFile):
-    f = open(nameFile, "r")
-    list1 = list()
-    number = ""
-    doublespace = 1 #смотрим чтоб не было двойных пробелов 
-    for char in f.read():
-        if ((char == ' ') and (doublespace == -1)):
-            list1.append(number)
-            number = ""
-            doublespace = 1
-        else:
-            if (char != ' '):
-                number += char
-                doublespace = -1
-    f.close()
-    return list1
-pass
-
-''' Создает таблицу с числами из двух списков '''
+''' РЎРѕР·РґР°РµС‚ С‚Р°Р±Р»РёС†Сѓ СЃ С‡РёСЃР»Р°РјРё РёР· РґРІСѓС… СЃРїРёСЃРєРѕРІ '''
 def createTable(nameFile, list1, list2):   
     out = open(nameFile, "w")   
      
@@ -54,8 +34,16 @@ def createTable(nameFile, list1, list2):
         out.write(line)
  
     out.close()
-pass
 
+''' РЎС‡РёС‚С‹РІР°РµРј С‡РёСЃР»Р° РёР· С„Р°Р№Р»Р° '''
+def getListNumbers(nameFile):
+    f = open(nameFile, "r")
+    list1 = list()
+    for str in f.readlines():
+        list1.extend(str.split())
+    f.close()
+    return list1
+    
 if __name__ == '__main__':
     import sys
     main(sys.argv[:])
