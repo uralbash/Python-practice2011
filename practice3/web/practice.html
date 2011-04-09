@@ -1,0 +1,79 @@
+<html>
+	  <head>
+	    <title>Practice2</title>
+	    <link rel="stylesheet" type="text/css" href="style.css" />
+		<SCRIPT LANGUAGE="javascript">
+		Now = new Date();
+		month = Now.getMonth() + 1;
+		document.write("Сегодня " + Now.getDate()+ "-" + month + "-" + Now.getFullYear());
+
+</SCRIPT>
+	  </head>
+	  <body background = "pic3.jpeg">
+	    <marquee behavior="scroll" direction="left" scrolldelay="10" bgcolor="#dddddd">HELLO WORLD!!!</marquee>
+		<h1>
+			<p id = "p1" align="center">!Работа с файлами!</p>
+		</h1>
+		<br>
+		<br>
+			<p id = "p2" align="center">Задание по практике №2</p>
+		<br>
+			<p id = "p3" align="center">Даны вещественные числа A,B и целое число N. Создать текстовый файл,
+			содержащий таблицу значений функции sqrt(x) на промежутке [A,B] с шагом (B - A)/N. Таблица
+			состоит из двух столбцов: с аргументами x (10 позиций, из них 4 под дробную часть) и со значением
+			sqrt(x) (15 позиций, из них 8 под дробную часть). Столбцы выравниваются по правому краю.</p>
+		
+		<h2>
+			<p id = "p4" align="left">Листинг программы</p>
+		</h2>
+		<br>
+		
+		<p id = "p5" align="left">
+		
+		<pre>
+		<span class="orange">from</span> math <span class="orange">import</span> sqrt <span class="comments"># подключение для расчета квадратного корня</span>
+		filename = <span class="green">"result.txt"</span>
+		
+		f1 = <span class="special">open</span>(filename, <span class="green">"w"</span>) <span class="comments"># открытие файла для записи</span>
+		
+		a = <span class="special">float</span>(<span class="special">input</span>(<span class="green">u"Введите A: "</span>)) <span class="comments">#ввод данных</span>
+		b = <span class="special">float</span>(<span class="special">input</span>(<span class="green">u"Введите B: "</span>))
+
+		n = <span class="special">int</span>(<span class="special">input</span>(<span class="green">u"Введите N: "</span>))
+		s = (b-a)/n #расчет шага
+
+		<span class="orange">while</span> a<=b: <span class="comments">#цикл по записи чисел в файл</span>
+
+    		  	<span class="special">print</span> str(a), str(sqrt(a)) <span class="comments">#вывод в консоль</span>
+
+    		  	<span class="comments">#запись для чисел с 
+    		  	#определенным форматом и выравниванием по кравому краю
+    		  	#если надо по левому, то ставить знак "-", перед форматом</span>
+
+			f1.write(<span class="green">'%10.4f '</span> % (a)), f1.write(<span class="green">'%15.8f\n'</span> % (sqrt(a)))
+
+    		  	a=a+s <span class="comments"># увеличение значения на шаг</span>
+    
+		f1.close() 
+		</p>
+		</pre>
+		<h2> 
+			 <p id = "p6" align="left">Скриншоты выполнения программы</p>
+		</h2>
+		<p><center><img src="pic1.jpg" alt="Промежуточный результат, выводимый в консоль"></center></p>
+		<p align="center">Промежуточный результат, выводимый в консоль</p><br>
+		<br>
+		<br>
+		<p><center><img src="pic2.jpg" alt="Результат, записанный в файл"></center></p>
+		<p align="center">Результат, записанный в файл</p>
+		<h2>
+			<p id = "p7" align="left">Ссылки:</p>
+		</h2>
+		<p id = "p8" align="left">
+		   <a href="laba2.py">Файл программы</a>
+		   <br>
+		   <a href="result.txt">Файл, в который записались результаты </a>
+		   </p>
+	  </body>
+	</html>
+	

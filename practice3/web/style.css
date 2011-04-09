@@ -1,0 +1,32 @@
+h1 
+	{
+		text-decoration: underline;
+	}
+
+#p2
+	{
+		color: red;
+		font-style:italic;
+	}
+
+#p3
+	{
+		color: #409000;
+	}
+
+span.orange
+	{
+		color:ff7920;
+	}
+span.comments
+	{
+		color: red;
+	}
+span.green
+	{
+		color: #409000;
+	}
+span.special
+	{
+		color:#8800b4;
+	}
