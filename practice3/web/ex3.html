@@ -1,0 +1,63 @@
+<!DOCTYE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Моя вторая веб-страница</title>
+  <link rel="stylesheet" href="my.css" type="text/css" />
+ </head>
+ <body>
+  <h1>Практическое задание по web-программированию</h1>
+  
+ <div class="layer1">
+  <div class="layer2">Дано целое число K и текстовый файл. Создать строковый файл и запи-
+сать в него все слова длины K из исходного файла. Словом считать набор
+символов, не содержащий пробелов, знаков препинания и ограниченный
+пробелами, знаками препинания или началом/концом строки. Если исход-
+ный файл не содержит слов длины K, то оставить результирующий файл
+пустым.</div> 
+ </div>
+ <div class="layer3">
+  <p class="p1">Листинг программы</p>
+  <pre># coding: utf-8
+filename1 = "file1.txt"
+filename2 = "file2.txt"
+def main(args):
+    ''' главная функция
+        принимает 1 аргумент'''
+    count_i = 0 #Счетчик
+    count_k = 3 #Длинна слова, которое будет записано в фаил'''
+    
+    print "Start the programm"
+    
+    f1 = open (filename1, "r")
+    f2 = open (filename2, "w")
+
+    for line in f1:
+        print "Current line", line
+        slovo = line.split()
+        print "Current slovo: ", slovo
+        a = len(slovo)
+        print "Current count slov", a
+        for count_i in range(a):
+            
+            if slovo[count_i].isalpha() and len(slovo[count_i]) == count_k:
+                print slovo[count_i]
+                f2.write(slovo[count_i]+'\n')
+
+            count_i = count_i + 1
+
+    f2.close()
+if __name__ == '__main__':
+    import sys
+    main(sys.argv[:])</pre>
+ <p class="p1">Результат работы программы</p>
+ <p class="p2">Для чтения, программе предлагался файл вида:</p>
+ <p class="p3"><img src="my4.png" alt="Файл для чтения" width="80%"></p>
+ <p class="p2">После выполнения программы создавался фаил со словами, удовлетворяющими условию отбора:</p>
+ <p class="p3"><img src="my3.png" alt="Результат работы программы" width="50%"></p>
+ </div>
+ 
+ </body>
+</html>
+
+ 
