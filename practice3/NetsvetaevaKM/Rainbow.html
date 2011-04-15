@@ -1,0 +1,62 @@
+<html>
+ 
+				 <head>
+				 <title>My first page </title>
+				 <link rel="stylesheet" href="style.css" type="text/css">
+				 </head>
+ 
+				 <body>
+				 <body background = "grass1.jpg">
+				 <h1><p id = "p1" align = "center" >Python</p></h1>
+			 	<h2><p id = "p2" align = "center">Лабораторная работа 2</p></h2> 
+				<pre><p id = "p3" align = "left" >Условие задачи: Дан текстовый файл, каждая строка которого содержит изображения нескольких
+    		чисел, разделенных пробелами (вещественные числа имеют ненулевую дробную
+    		часть). Создать файл вещественных чисел, содержащий (в том же порядке) все
+    		числа из исходного файла, имеющие ненулевую дробную часть.		   	  
+				  	 		   		  			<img src = "pic2.png">	   </pre>
+				<h3><p id = "p4" align = "left" > Листинг программы:</p></h3>
+				<p id = "p5" align = "left" ><pre>
+filename = <span class="green">"myFile.txt"</span>
+filename2 = <span class="green">"myFile2.txt"</span>
+
+f1 = <span class="spec" title="open(filename[, mode[, bufsize]]) ---- открытие файла">open</span>(filename, <span class="green">"r"</span>)<span class="red"># открываем файл для чтения</span>
+f2 = <span class="spec" title="open(filename[, mode[, bufsize]]) ---- открытие файла">open</span>(filename2, <span class="green">"w"</span>)<span class="red"># открываем файл для записи</span>
+
+<span class="orange" title = "The FOR statement is used to iterate over the elements of a sequence (such as a string, tuple or list) or other iterable object">for</span> substr <span class="orange">in</span> f1.read().split():
+    s = substr.split(<span class="green">'.'</span>)<span class="red"># разбиваем все элементы по точке</span>
+    <span class="orange" title = "The IF statement is used for conditional execution">if</span> <span class="spec" title = "The built-in function len() returns the length of a string">len</span>(s) == 2:<span class="red"># если число элементов равно двум</span>
+        <span class="orange" title = "The IF statement is used for conditional execution">if</span> s[0] != <span class="green">''</span> <span class="orange">and</span> s[1] != <span class="green">''</span>:<span class="red"># проверяем что оба элемента не пустые</span>
+            <span class="spec" title = "conclusion on a screen">print</span> s
+            <span class="red"># проверяем, чтобы в обоих элементах были числа</span>
+            <span class="orange" title = "The IF statement is used for conditional execution">if</span> s[1]>=<span class="green">'0'</span> <span class="orange">and</span> s[1]<=<span class="green">'9'</span> <span class="orange">and</span> s[0]>=<span class="green">'0'</span> and s[0]<=<span class="green">'9'</span>:
+                <span class="red"># если второй элемент ненулевой</span>
+                <span class="orange" title = "The IF statement is used for conditional execution">if</span> <span class="spec" title="float([x]). Convert a string or a number to floating point">float</span>(s[1])!=0:
+                    <span class="red"># запись в файл, сливаем оба элемента в вещественное число</span>
+                    f2.write(<span class="green">"%s "</span> % <span class="green">"."</span>.join(s))
+          
+
+f1.close()
+f2.close()<span class="red"># закрываем файлы</span>
+		  </p></pre>
+		  <h3>Таблица содержания файлов</h3>
+		  <TABLE ALIGN=CENTER WIDTH="80%" BORDER=1 CELLSPACING=10 CELLPADDING=3> 
+		  <CAPTION>Содержание файлов</CAPTION> 
+		  <TR class = "one"><TH>1 файл (входной файл)</TH> <TH>2 файл (выходной файл)</TH>
+		  <TR class = "two"> 
+       	  	   <TD>
+			   <pre>dgf 0 345 345.345 .345
+345 45 fhgh |||| |
+
+rtrt 
+er  56 ^ dfgdf  fdgfd fdsg
+ as 5.6 7.7.8 456. 00 fds.432 3214.0 533.000 423.fdf 54325.0005</pre></TD> 
+       		   <TD>345.345 5.6 54325.0005  </TD> 
+       		   </TR> 
+		</TABLE> 
+		  <h3>Интересные ссылочки:</h3>
+		  1.<a href="http://htmlbook.ru/samhtml">Онлайн учебник по html</a>
+		  <br>
+		  2.<a href="http://htmlbook.ru/samcss">Онлайн учебник по css</a>
+				 </body>
+ 
+</html>

@@ -1,0 +1,46 @@
+#p1
+{
+	font-style:italic;
+}
+
+#p2
+{
+	font-style:italic;
+	color:gray;
+}
+
+#p3
+{
+	
+	color:#ff7920;
+}
+
+tr.one
+{
+	background-color:#b2ff80;
+}
+
+tr.two
+{
+	background-color:#dddddd;
+}
+
+span.green
+{
+	color:#79ff20;
+}
+
+span.red
+{
+	color:red;
+}
+
+span.spec
+{
+	color:#de80ff;
+}
+
+span.orange
+{
+	color:#ff7920;
+}
