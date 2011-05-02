@@ -1,0 +1,30 @@
+@charset "utf-8";
+/* CSS Document */
+
+H1{color:#03C; font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif}
+
+body{background-image:url(back.jpeg)}
+
+div#Task{color:#609; background-color:#CCC; max-width:600px;
+filter:alpha(opacity=40);
+opacity:0.4
+}
+
+div#Source{color:#060; background-color:#CCC; max-width:600px;
+filter:alpha(opacity=60);
+opacity:0.6
+}
+
+div#Result{background-color:#FF6; max-width:600px;
+filter:alpha(opacity=40);
+opacity:0.4;
+}
+
+div#Task:hover { color:green ; text-decoration:none; }
+div#Task:active {color: blue; text-decoration:none;}
+
+div#Source:hover { color:blue ; text-decoration:none; }
+div#Source:active {color: red; text-decoration:none;}
+
+div#Result:hover { color:red ; text-decoration:none; }
+div#Result:active {color: green; text-decoration:none;}
