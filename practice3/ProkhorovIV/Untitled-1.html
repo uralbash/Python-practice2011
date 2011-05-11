@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Practice3</title>
+<link href="Untitled-2.css" rel="stylesheet" type="text/css" />
+</head>
+<div id="main" align="center">
+    <h1>Task</h1>
+    <div id="Task" align="left"><p>Дан текстовый файл. Создать символьный файл, содержащий все сим-
+волы, встретившиеся в тексте, включая пробел и знаки препинания (без
+повторений). Символы располагать в порядке их первого появления в тексте.</p></div>
+
+<h1>Source</h1>
+    <div id="Source" align="left"><p># coding: utf-8<br />
+<br />
+filename = "text_src.txt"<br />
+filename2 = "text_dst.txt"<br />
+charsList = list()<br />
+<br />
+def main(args):<br />
+    f1 = open(filename, "r")<br />
+    f2 = open(filename2, "w")<br />
+    <br />
+    for char in f1.read():<br />
+        if checkRepeat(char) == False:<br />
+            charsList.append(char) <br />
+            f2.write(char) <br />
+            <br />
+def checkRepeat(char):<br />
+    found = False<br />
+    for c in charsList:<br />
+        if c == char:<br />
+            found = True<br />
+    return found<br />
+    <br />
+if __name__ == '__main__':<br />
+    import sys<br />
+    main(sys.argv[:])<br />
+</p></div>
+
+    <h1>Result</h1>
+    <div id="Result" align="left"><p><b>Text_dst.txt:</b><br /><br  />
+    Знакомств Python
+Оглеипчухрш?жGAEDjagpiefrmwkдябызюПБь31фц,К0.йН542x()Иэ-ЭRubzdvI:/РщС!ЧЛUlВH"ХМ[+s>]Д;{}JАЕТъONSQLcЯ
+    </p></div>
+
+</div>
+<body>
+</body>
+</html>
