@@ -1,0 +1,51 @@
+#header h1
+{
+	font-size:30px;
+	color:red;
+}
+#header 
+{
+	width:100%;
+	text-align:center;
+}
+#body
+{
+	background-image: url('images/background.jpg');
+	width:100%;
+}
+#body a
+{
+	color:red;
+}
+#body h1
+{
+	font-size:20px;
+	color:red;
+}
+#img
+{
+	width:100%;
+	text-align:center;
+}
+/*index.html*/
+#tableInBody
+{
+	width:100%;
+}
+#tableMenu
+{
+	width:30%;
+	text-align:center;
+}
+
+#tableBody
+{
+	padding:5px 5px 5px 5px;
+	vertical-align:top;
+	width:70%;
+}
+#task
+{
+	padding:5px 5px 5px 5px;
+}
+
