@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>
+		ПРАКТИКА 3
+	</title>
+	</head>
+	<body style="background-image: url('images/backgroundBody.jpg');">
+		<div id = "header">
+			<H1>Описание второй практики</H1>
+			<hr>
+		</div>
+		<div id = "body">
+			<H1>Код Программы</H1>
+			<a href = "index.html">вернуться к главной</a>
+					<hr>
+					<pre>
+						#!/usr/bin/env python
+						#-*- coding: utf-8 -*-
+						alphabet = u'абвгдежзийклмнопрстуфхцчшщъыьэюя'						
+						key = [0,0,0,0,0,0,0,0,0,0]										
+	
+						def findKey(codingString, decodingString):					 								
+		
+							codingString = codingString.lower()
+							decodingString = decodingString.lower()	
+							seek = 0;
+							count = 0
+							while count < 10 and seek < len(decodingString):			
+
+								if (alphabet.find(decodingString[seek]) != -1):				
+									decodingSym = alphabet.index(decodingString[seek])	
+						
+								elif (decodingString[seek] == codingString[seek]):		
+									seek += 1
+									continue
+
+								else:					
+									print "ERROR: incorrect decoding string"
+									exit(0)
+
+								if (alphabet.find(codingString[seek]) != -1):  		  		
+									codingSym = alphabet.index(codingString[seek])
+									key[count] = codingSym - decodingSym			
+			
+									if key[count] < 0:					
+										key[count] = (len(alphabet) - 1) + key[count]
+
+									count += 1
+									seek += 1
+			
+								else:								
+									print "ERROR: incorrect decoding string"
+									exit(0)
+				
+							if count < 10:							 	
+								print "ERROR: insufficient data"
+								exit(1)
+	
+
+						def decoding(key, lines):
+	
+							newStr = ""
+							count = 0
+							keyCount = 0
+							fileStr = ""	
+							while count < len(lines):						
+								newStr = ""
+								for sym in lines[count].decode('utf-8'):
+									if keyCount == 10:
+										keyCount = 0 
+			
+									if (alphabet.find(sym.lower()) != -1):			
+										newSym = alphabet.index(sym.lower()) - key[keyCount]
+										if (newSym < 0):
+											newSym += (len(alphabet) - 1)
+
+										newSym = alphabet[newSym]
+
+										if (sym.isupper()):				
+											newSym = newSym.upper()
+
+										newStr += newSym
+										keyCount += 1
+					
+									else:
+										newStr += sym
+				
+								fileStr += newStr
+								count += 1
+							return fileStr
+		
+			
+
+						def main(args):
+	
+							pathFile = args[1].decode('utf-8')
+							decodingString = args[2].decode('utf-8')
+							lines = open(pathFile,"r").readlines()
+							findKey(lines[0].decode('utf-8'), decodingString)
+							fileStr = decoding(key, lines)
+							print "key: ",key	
+							f = open( pathFile, 'w')
+							f.write(fileStr.encode('utf-8'))
+							f.close()
+							print "DONE"
+	
+						if __name__ == '__main__':
+						    import sys
+						    main(sys.argv[:])
+					</pre>
+					<hr>
+		</div>		
+	</body>
+</html>
+<div name = "code">
+					
